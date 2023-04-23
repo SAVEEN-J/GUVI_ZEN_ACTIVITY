@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript - Day -1 : Introduction to Browser & web</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        table, th, td {
+          border:1px solid black;
+          padding-left: 10px;
+        }
+
+        </style>
+</head>
+<body style=" margin: 50px;">
+
+    <h1 style="text-align: center;border: 1px solid rebeccapurple; background-color: aquamarine;">Activities</h1>
+    <div class="container">
+    <button type="button" class="btn btn-info" ><a href="#table">HTTP1.1 vs HTTP2</a></button>
+    <button type="button" class="btn btn-info" ><a href="#object">Objects and its Internal Representation</a></button>
+    </div>   
+    <hr>
+
+   <h3 style="padding-left: 30px;"> Difference between HTTP1.1 vs HTTP2</h3>
+    <table id ="table" style="width:100%; ">
+    <thead>
+       
+             <th style="width:50%; background-color: #206272; color: aliceblue; text-align: center; ">HTTP1.1 </th>
+             <th style="width:50%; background-color: #206272; color: aliceblue; text-align: center; ">HTTP2</th>          
+    </thead>
+    <tbody>
+    <tr>
+        <td><h4>Header compression</h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Header Compression uses formats like gzip to compress the data transferred in the messages. However, the header component of the message is always sent as plain text. Though the header itself is small, it gets larger due to the use of cookies or an increased number of requests.<br><br></td>
+
+        <td  ><h4>Header compression</h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Uses HPACK compression to decrease the average size of the header. This compression program encodes the header metadata using Huffman coding, which significantly reduces its size as a result. In addition, HPACK keeps track of previously transferred header values and further compresses them as per a dynamically modified index shared between client and server.  </td>
+      
+
+    </tr>
+    <tr>
+        <td><h4>Server push</h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A server only serves content to a client device if the client asks for it. However, this approach is not always practical for modern webpages, which often involve several dozen separate resources that the client must request<br><br><br></td>
+
+        <td><h4>Server push</h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Server push solves this problem by allowing a server to "push" content to a client before the client asks for it. The server also sends a message letting the client know what pushed content to expect – like if Bob had sent Alice a Table of Contents of his novel before sending the whole thing.<br><br><br></td>
+      
+
+    </tr>
+    <tr>
+        <td><h4>Multiplexing</h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This is loads resources one after the other, so if one resource cannot be loaded, it blocks all the other resources behind it. In contrast.<br><br><br></td>
+
+        <td><h4>Multiplexing</h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This is able to use a single TCP connection to send multiple streams of data at once so that no one resource blocks any other resource By splitting data into binary-code messages and numbering these messages so that the client knows which stream each binary message belongs to.</td>
+      
+
+    </tr>
+    <tr>
+        <td><h4>Buffer Overflow</h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The flow control mechanism in HTTP/1.1 relies on the basic TCP connection. In beginning itself, both the machines set their buffer sizes automatically. If the receiver’s buffer is full, it shares the receive window details, telling how much available space is left. The receiver acknowledges the same and sends an opening signal.that flow control can only be implemented on either end of the connection. Moreover, since HTTP/1.1 uses a TCP connection, each connection demands an individual flow control mechanism</td>
+
+        <td><h4>Buffer Overflow</h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;It multiplexes data streams utilizing the same (one) TCP connection. So, in this case, both machines can implement their flow controls instead of using the transport layer. The application layer shares the available buffer size data, after which, both machines set their receive window details on the multiplexed streams level. In addition, the flow control mechanism does not need to wait for the signal to reach its destination before modifying the receive window.<br><br></td>
+      
+
+    </tr>
+
+</tbody>
+   </table>
+<br>
+
+<h3 id="object">Objects And Its Internal Representation </h3>
+
+<ul>
+    <li>Objects are most important data-type and forms the building blocks for modern JavaScript. These objects are quite different from JavaScript’s <b>primitive data-types(Number, String, Boolean, null, undefined and symbol)</b> in the sense that while these primitive data-types all store a single value each (depending on their types).</li><br>
+    <li>Objects are more complex and each object may contain any combination of these primitive data-types as well as reference data-types.
+        An object, is a reference data type. Variables that are assigned a reference value are given a reference or a pointer to that value. That reference or pointer points to the location in memory where the object is stored. The variables don’t actually store the value.</li><br>
+    <li> Loosely speaking, objects in JavaScript may be defined as an unordered collection of related data, of primitive or reference types, in the form of<b><i>“key: value”</i> pairs. These keys can be variables or functions and are called properties and methods,</b> respectively, in the context of an object.</li>    <br>
+    <li>For Eg. If your object is a student, it will have properties like name, age, address, id, etc and methods like updateAddress, updateNam, etc.</li>
+</ul>
+
+
+
+
+</body>
+</html>
