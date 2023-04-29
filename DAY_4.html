@@ -14,11 +14,23 @@
 
                                                   // day4  1.compare two json have same properties
    // a  let obj1={name:"person",age:5}   the ans is there are diffrent variable called obj1 and obj2 .we can accese through variable.key
-   let obj1={name:"person",age:5} 
-   console.log(obj1.name,obj1.age);   
-   //b    
+   let obj1={name:"person",age:4} 
+ 
+   
    let obj2={age:5,name:"person"} 
-   console.log(obj2.name,obj2.age); 
+   
+let keys= Object.keys(obj1)
+let both_josn=true;
+for (let e of keys) {
+  if (obj1[e] !== obj2[e]) {
+     both_josn=false
+     break;
+   } 
+  
+}
+both_josn?console.log("Equal"):console.log("NOt equal");
+
+
 
                                                 // day4  2. rest countries API   and 3
 
@@ -239,22 +251,6 @@ for(i=1;i<=a;i++)
 }
 console.log("equilateral triangle",Math.round(area*100)/100)
 
-// Area Of Isosceles Triangle
-// Volume Of Sphere
-// Volume Of Prism
-// Find area of a triangle.
-// Give the Actual cost and Sold cost, Calculate Discount Of Product
-// Given their radius of a circle and find its diameter, circumference and area.
-// Given two numbers and perform all arithmetic operations.
-// Display the asterisk pattern as shown below(No loop needed):
-// *****
-// *****
-// *****
-// *****
-// *****
-// Calculate electricity bill?
-// For example, a consumer consumes 100 watts per hour daily for one month. Calculate the total energy bill of that consumer if per unit rate is 10?
-// Program To Calculate CGPA
 
 
 
