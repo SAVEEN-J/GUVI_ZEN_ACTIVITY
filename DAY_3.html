@@ -9,109 +9,251 @@
 <body>
     <h1>Day_3</h1>
 
-    <h3> iteratefor all loops</h3>
-    <h3> resume</h3>
+   <h3></h3>
 
 
    
     <script>
-// json iteratefor all loops
-
-const json_array= new XMLHttpRequest();
-json_array.addEventListener("load",callfunction);
-json_array.open("GET","https://restcountries.com/v3.1/all")
-json_array.send()
-    
-function callfunction() {
-    let data=JSON.parse(this.responseText);
-//console.log(data);  
-    //for 
-for (let i = 0; i < data.length; i++) {
-  // console.log(data[i].name.common);    
-}
-    //for in
-for ( i in data){ 
-  //console.log(data[i].name.common,data[i].population);    
-}
-    //for of
-    for ( e of data){ 
- //  console.log(e.name.common,e.population);    
-
-}
-
-    //foreach
-
-Object.keys(data).forEach(function(k){
-    //console.log( data[k].name);
-});
-
-}
-
-
-
-
-    var data={
-  "Resume_data": [
-    {
-      "name": "Saveen J",
-      "email": "saveenj1996@gmail.com",
-      "Phone": 8220123122,
-      "skills":{
-        "skills":"skills",
-        "skil1":"HTML-5",
-        "skil2":"CSS-3",
-        "skil3":"BootStrap",
-        "skil4":"JavaScript",
-        "skil5":"MySql",
-        "skil6":"MongoDB",
-        "skil7":"ReactJS",
-        "skil8":"NodeJS",
-        "skil9":"Data Structure & Algorithms",
-        "skil10":"AWS"
-
-                   },
-        "qualification":{
-            "clg_degree":"Mechanical Engineering",
-            "clg_name":"Muthyammal College of Engineering",
-            "clg_location":"Rasipuram",
-            "clg_degree_date":"May 2014 - April 2017"
-,
-                       },
-        "languages":{"lan1":"Tamli","lan2":"English"},
-
-    }, 
+                                                // day3  1.compare two json have same properties
+   // a  let obj1={name:"person",age:5}   the ans is there are diffrent variable called obj1 and obj2 .we can accese through variable.key
+   let obj1={name:"person",age:4} 
  
-  ]
-}    
+   
+   let obj2={age:5,name:"person"} 
+   
+let keys= Object.keys(obj1)
+let both_josn=true;
+for (let e of keys) {
+  if (obj1[e] !== obj2[e]) {
+     both_josn=false
+     break;
+   } 
+  
+}
+both_josn?console.log("Equal"):console.log("NOt equal");
 
-for (i in data) {
-     console.log(data[i]);
-    // console.log(data[i][0].name);
-    // console.log(data[i][0].email);
-    // console.log(data[i][0].Phone);
-    // console.log(data[i][0].skills.skil1);
-    // console.log(data[i][0].skills.skil2);
-    // console.log(data[i][0].skills.skil3);
-    // console.log(data[i][0].skills.skil4);
-    // console.log(data[i][0].skills.skil5);
-    // console.log(data[i][0].skills.skil6);
-    // console.log(data[i][0].skills.skil7);
-    // console.log(data[i][0].skills.skil8);
-    // console.log(data[i][0].skills.skil9);
-    // console.log(data[i][0].skills.skil10);
-    // console.log(data[i][0].qualification.clg_degree);
-    // console.log(data[i][0].qualification.clg_name);
-    // console.log(data[i][0].qualification.clg_location);
-    // console.log(data[i][0].qualification.clg_degree_date);
-    // console.log(data[i][0].languages.lan1);
-    // console.log(data[i][0].languages.lan2);
+
+
+                                                // day3  2. rest countries API   and 3
+
+
+        // display country and flags
+function reqListener() {
+
+  let data=JSON.parse(this.responseText);
+//    console.log(data);
+  for (let i = 0; i < data.length; i++) {
     
+ console.log(data[i].flags);   // 2 rd ans display all flags
+  console.log(data[i].name,data[i].region,data[i].subregion,data[i].population);  // 3 rd ans print the all countries name.region,sub-region,and population
 }
 
+}
+       const req= new XMLHttpRequest();
+        req.addEventListener("load",reqListener)
+        req.open("GET","https://restcountries.com/v3.1/all")
+        req.send();
+
+                             // day3  4. https://medium.com/@reach2arunprakash/www-guvi-io-zen-d395deec1373 
+
+////////////////////////////////////////////Task 1: Simple Programs todo for variables////////////////////////////////////////////////////////
 
 
+            // 1.Declare four variables without assigning values and print them in console
+  var variable1;  //   o/p -undifend
+console.log(variable1);
+var variable2;  //   o/p -undifend
+//console.log(variable2);
+var variable3;  //   o/p -undifend
+//console.log(variable3);
+var variable4;  //   o/p -undifend
+//console.log(variable4);
+                // 2.How to get value of the variable myvar as output
+              
 
-// own resume
+  let myvar=1; //declear the variable and we assign the value to the variable  .its value is store in that given variable
+  console.log(myvar);     
+  
+  
+                // 3. Declare variables to store your first name, last name, marital status, country and age in multiple lines
+let firstName = "saveen",
+ lastName = "J",
+ marital_status = "un married",
+ country = "india",
+ age = 26;
+console.log(firstName,lastName,marital_status,country,age);
+
+                //4.. Declare variables to store your first name, last name, marital status, country and age in a single line
+let FirstName= "saveen",LastName ="j",Marital_status="un married",Country="india",Age=26;
+console.log(FirstName,LastName,Marital_status,Country,Age);
+
+                // 5.. Declare variables and assign string, boolean, undefined and null data types
+let x;       //  x is undefined
+console.log(x,typeof x);
+x = 5;       //  x is a Number
+console.log(x,typeof x);
+x = "John";  // x is a String
+console.log(x,typeof x);
+x = true;  // x is a boolean
+console.log(x,typeof x);
+x = null;  // x is a boolean
+
+console.log(x,typeof x);
+// if (x === null) {
+//     console.log("if",x,typeof x);
+// } else{
+//     console.log("else",x,typeof x);
+// }
+
+                        //6. Convert the string to integer
+    /// parseInt()
+let str= "10";
+let convertNum=parseInt(str)
+console.log(str,typeof str,convertNum,typeof convertNum);
+
+    //Number()
+    let string= "20";
+let ConvertNum=Number(string)
+console.log(string,typeof string,ConvertNum,typeof ConvertNum);
+    //Plus sign(+)
+    let String= "30";
+let Convert_Num =+ String;
+console.log(String,typeof String,Convert_Num,typeof Convert_Num);
+                  //7. Write 6 statement which provide truthy & falsey values.
+
+//The following values are always falsy:
+
+// false
+// 0 (zero)
+// -0 (minus zero)
+// 0n (BigInt zero)
+// '', "", `` (empty string)
+// null
+// undefined
+// NaN
+
+// Everything else is truthy. That includes:
+
+// '0' (a string containing a single zero)
+// 'false' (a string containing the text “false”)
+// [] (an empty array)
+// {} (an empty object)
+// function(){} (an “empty” function)
+
+const truthy_values = [
+  false,
+  0,
+  ``,
+  '',
+  "",
+  null,
+  undefined,
+  NaN,
+  '0',
+  'false',
+  [],
+  {},
+  function() {}
+].filter(Boolean);
+
+// Filter out falsy values and log remaining truthy values
+console.log(truthy_values);
+
+
+/////////////////////////////////////////////Task 2: Simple Programs todo for Operators///////////////////////////////////////////////
+
+//1.Square of a number
+ var square = 5 ;
+ console.log(Math.pow(square, 2)); // 25
+ console.log(square ** 2); // 25 //iuse exponentiation operator
+//2. Swapping 2 numbers
+ var a =10;
+ var b =20;
+ console.log("Before swapping",a,b,typeof a,typeof b);
+
+ [a,b]=[b,a]
+ console.log("After swapping",a,b,typeof a,typeof b);
+
+//3.Addition of 3 numbers
+var a ="10";
+var b ="10";
+var c ="10";
+var d=parseInt(a)+parseInt(b)+parseInt(c);
+console.log("Addition of 3 numbers",d);
+
+//4.Celsius to Fahrenheit conversion C = (5/9) * (F - 32)    Celsius to Fahrenheit : (°C × 1.8) + 32 = °F---cTemp * 9 / 5 + 32;/////////////  Fahrenheit to Celsius : (°F − 32) ÷ 1.8 = °C ----(fTemp - 32) * 5 / 9;
+function celToFah(celsius) 
+{
+  const cTemp = celsius;
+  const cToFahr = cTemp * 9 / 5 + 32;
+  const message = `${cTemp}\xB0C is ${cToFahr} \xB0F.`;
+    console.log(".Celsius to Fahrenheit",message);
+}
+celToFah(50);
+//5. Meter to miles    
+//To convert a measurement in meters to a measurement in miles, multiply the length by the following conversion ratio: 0.000621 miles/meter.------  one meter is equal to 0.000621 miles --- formula : miles = meters × 0.000621 ----- 1 m = 0.000621 mi
+var meters=12500;
+console.log("meter to miles",meters*0.000621371192);
+//6. Pounds to kg ---pounds * 0.453592;
+var pounds = 500;
+var kilograms = pounds * 0.453592;
+console.log("pounds to kg",kilograms);
+
+// function convertPoundsToKilograms(pounds) {
+//   var kilograms = pounds * 0.453592;
+// console.log(kilograms);
+
+//   return kilograms;
+// }
+// convertPoundsToKilograms(500);
+
+
+//7. Calculate Batting Average
+//Batting average = Number of times the player has scored a hit / Number of official times player is at bat
+var ballCount=50;
+var score = 200;
+
+var battingAvg=score/ballCount;
+console.log("batting Avg",battingAvg);
+
+//8. Calculate five test scores and print their average
+
+var elmt=[10,20,30,40,50]
+var sum = 0;
+for( var i = 0; i < elmt.length; i++ ){
+    sum += parseInt( elmt[i] ); //don't forget to add the base
+}
+
+var avg = sum/elmt.length;
+
+console.log( "five test scores is: " + sum + " The average is: " + avg );
+
+// 9.Power of any number x ^ y.
+let x_numb=2;
+let y_numb=10;
+console.log("Power of any number",x_numb ** y_numb);
+
+// 10.Calculate Simple Interest
+
+var p = 1000; // Principal amount
+var r = 1.05; // Rate of interest
+var t = 2;    // Time in years
+// Simple Interest = (principal * rate * time) / 100
+var interest = (p * r * t) / 100;
+console.log("Simple Interest: " + interest)
+// 11.Calculate area of an equilateral triangle----- Area of Equilateral Triangle= ( 1.73 × a × a)/4
+
+a= 20
+area = 1
+for(i=1;i<=a;i++)
+{
+ 
+    area = (1.73*a*a)/4
+    
+}
+console.log("equilateral triangle",Math.round(area*100)/100)
+
+
     </script>
 
 
@@ -120,3 +262,4 @@ for (i in data) {
     
 </body>
 </html>
+
