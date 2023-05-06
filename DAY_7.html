@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 07:ARRAY METHODS</title>
+</head>
+<h1>Day 07:ARRAY METHODS</h1>
+<body>
+    
+<script>
+function myfunc() {
+
+    // var data=json.parse(this.responseText);
+     var data=JSON.parse(this.responseText);
+    
+ // a.Get all the countries from the Asia continent /region using the Filter function
+     function function_filter(e){
+
+   if (e.continents) {
+       return e.continents == "Asia" || e.region == "Asia"
+   
+   } 
+     }
+     let region= data.filter(function_filter)
+   // console.log(region);
+
+    //b  Get all the countries with a population of less than 2 lakhs using Filter function
+    let pop= data.filter(e=>e.population<200000);
+  //  console.log(pop);
+
+// c.Print the following details name, capital, flag using forEach function
+
+data.forEach(element => {
+ //console.log(element.name,element.capital,element.flag);
+    
+});
+
+
+
+//d Print the total population of countries using reduce function
+
+function popuLation(previousValue, currentValue, index) {
+//  console.log(previousValue.population+currentValue.population);
+
+
+ }
+
+
+
+
+// e Print the country which uses US Dollars as currency.
+
+function FindUSDollars(value,ind,arr) {
+
+let split_usd=Object.keys(value.currencies || {});
+  if (split_usd[0]=="USD") {
+    return true 
+  }
+
+ }
+let country=data.filter(FindUSDollars)
+ console.log(country);
+}
+
+const json=new XMLHttpRequest();
+json.addEventListener("load",myfunc)
+
+json.open("GET","https://restcountries.com/v3.1/all")
+json.send();
+
+</script>
+
+
+
+</body>
+</html>
