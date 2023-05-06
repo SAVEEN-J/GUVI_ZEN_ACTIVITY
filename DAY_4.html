@@ -10,13 +10,16 @@
     <h1 style="text-align: center;border: 1px solid rebeccapurple; background-color: aquamarine;"> Day-4 /Activities</h1>
 
 
-    <h1>Immediately Invoked Function Expressions</h1>
-    <script>
-///////////////////////////////////////////////a.Print odd numbers in an array
-(function() {
+    <h1>1 .Immediately Invoked Function Expressions</h1>
+    <h1>2 . Arrow functions</h1>
 
+    <script>
+///////////////////////////////////////////////a.Print odd numbers in an array 
 var addNumbers = [1,2,3,4,5,6,7,8,9,10,11,12,13];
 var oddNumber = [];
+
+(function(addNumbers) {
+
 
 for (let i in addNumbers) {
       
@@ -25,25 +28,22 @@ for (let i in addNumbers) {
     
 }        
     }
-   // console.log(oddNumber);
+  
 
 return addNumbers;
 
-})();
+})(addNumbers);
+  // console.log("oddNumber",oddNumber);
+
 /////////////////////////////////////////////// b Convert all the strings to title caps in a string array
-
-(function() {
-
 var string_array = ["i like to play volley ball"];
-
-  //  console.log(string_array.map(str=>str.toUpperCase()));
-
+(function(string_array) {
+// console.log(string_array.map(str=>str.toUpperCase()));
 return string_array;
 
-})();
+})(string_array);
 
 ///////////////////////////////////////////////c Sum of all numbers in an array
-
 
 (function(){
     let add=0;
@@ -54,116 +54,159 @@ return string_array;
      add= add+sum[index];
  
     }
-    //console.log(add);
+   // console.log(add);
 
 return sum;
 })();
 
 /////////////////////////////////////////////// d -Return all the prime numbers in an array
- //1.prime number 
- //2.itrate
- //3.
+
+  let prime_num= [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17];
 
 
+  ((array) => {
+ 
+    let find_pm =(array.filter(number=>{
+      if (number <=1) {
+        return false;
+        
+      }else{
+      for (let i = 2; i <= Math.sqrt(number); i++) {
+     
+     if (number % i === 0) {
+     
+       return false
+     }
+   }}return true
 
-// (function ()
-// {
-//     var sum= [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,]
-//     let array =[]
+    }));
    
-//     // var math =parseInt(sum.join(","))
-//    for (var i in sum) {
-//     console.log(sum);
+   // console.log("prime numbers",find_pm);
   
-//    }
-//      for (var i = 2; i < Math.sqrt(sum[i]); i++) {
-//         console.log(sum);
-//      if (sum %2 !== 0) {
-//         array.push(sum)
-              
-//      }
-//     } return false
-
-  
-// })();
-
-  // console.log(filter_sum);
-//  (function([sum]){
-//     var filter_sum=sum.filter((sum)=>sum);
-  
-//    console.log(filter_sum);
-//    let length = filter_sum
-  
-    // for (var i = 2; i < Math.sqrt(filter_sum); i++) {
-    //   console.log(i,Math.sqrt(current));
-//       if (length %2 === 0) {
-  
-//     return false;
-    
-// }         
-  //  }
-    
-    // return true;
-   
-  
-// return sum;
-// })();
-
+})(prime_num);
 
 ///////////////////////////////////////////////e Return all the palindromes in an array
-
-//1.revers string or number
-//2.check both are insame
-//push array
-(function(){
-
-    var palindromes_array=["ssdaa","asdfgfdsa","dsd","gsdsg","sgdgdsg","211","2113","323"]
+let palindromes_array=["ssdaa","asdfgfdsa","dsd","gsdsg","sgdgdsg","211","2113","323"];
+var newarray=[];
+((e)=>{  
   
-   var newarray=[];
-  // console.log(newarray);
-for ( i=0; i<palindromes_array.length;i++) {
+
+for ( i=0; i<e.length;i++) {
   
-    let par=palindromes_array[i].split("").reverse().join("");
+    let par=e[i].split("").reverse().join("");
     
-    if (palindromes_array[i] == par) {
+    if (e[i] == par) {
         newarray.push(par)
     }
    
 }
-})();
+})(palindromes_array);
+//console.log("palindromes",newarray);
 ///////////////////////////////////////////////f Return  median of two array of the same
 
+let a = [0,2,3,5,9];
+let b = [1,4];
+var median = ((a1, a2) => {
+  let x = a1.concat(a2);
+  x.sort(function (a,b) {
+    return a - b;
+  });
+  let len = x.length;
+  
+  return len%2 === 0 ? (x[Math.floor(len/2)-1] + x[Math.ceil(len/2)])/2 : x[Math.floor(len/2)];
+
+})(a,b);
+//console.log("median",median);
+///////////////////////////////////////////////g Remove duplicates from an array
+
+
+let RemoveDuplicates = ["apple", "mango", "apple","orange", "mango", "mango"];
+          
+ 
+((e)=> {
+  // console.log(e);
+  var RemoveValue =e.filter((val,ind)=>{
+
+  
+if (ind===e.indexOf(val)) {
+ 
+  return true
+}  
+
+
+  })
+ // console.log(RemoveValue);      
+ 
+        
+})(RemoveDuplicates);
+
+ 
+////////////////////////////////////////////////////////////////////////////////2.ARROW FUNCTION////////////////////////////////////////////////////
+/////////////////////////////////////////////////// a.Print odd numbers in an array (ARROW)
+
+var ODDNumbers = [1,2,3,4,5,6,7,8,9,10,11,12,13];
+var oddnumber = [];
+let mapadd=ODDNumbers.map((v,i,a)=>{
+ 
+if (v%2 ===0) {
+ 
+  oddnumber.push(i)
+}
+
+
+})
+
+// console.log(oddnumber);
+
+
+//////////////////////////////////////////// b Convert all the strings to title caps in a string array
+var string_array = ["i like to play volley ball"];
+
+   let string=string_array.map(str=>str.toUpperCase());
+ //  console.log(string);
+///////////////////////////////////////////////c Sum of all numbers in an array
+var sum=[100,200,450]
+
+let ALLarray  =sum.reduce((p,c)=>{
+
+ return p+c
+
+})
+// console.log("sum",ALLarray);
 
 /////////////////////////////////////////////// d -Return all the prime numbers in an array in arrow function
 
-
+let numArray = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,]
 numArray = numArray.filter((e) => {
-// console.log(number);
+if (e <=1) {
+  return false
+} else {
   for (var i = 2; i <= Math.sqrt(e); i++) {
-    if (e % i === 0) return false;
+    if (e % i === 0 ) {
+      return false
+    }
   }
-  return true;
+  
+}
+return true
+ 
 });
-var numArray = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,]
-//console.log(numArray);
+
+//  console.log(numArray);
 ///////////////////////////////////////////////e Return all the palindromes in an array arrow function
 
-var palindromes_Array=["ssdaa","asdfgfdsa","dsd","gsdsg","sgdgdsg","211","2113","323","savas"]
-var new_Array=[];
-let arr=((palindromes_Array) => {
-  
-for ( i=0; i<palindromes_Array.length;i++) {
+let palindromes_Array=["ssdaa","asdfgfdsa","dsd","gsdsg","sgdgdsg","211","2113","323","savas"]
+let rev_Array=[];
 
-let par=palindromes_Array[i].split("").reverse().join("");
+palindromes_Array.map((e)=>{
+  let reverse=e.split("").reverse().join("");
+  if (reverse == e ) {
+    rev_Array.push(reverse);
+ }
+ 
+})
+//console.log(rev_Array);
 
-if (palindromes_Array[i] == par) {
-    new_Array.push(par)
-}
-}
-});
-
-arr(palindromes_Array)
-//console.log(new_Array);
 
 
 
