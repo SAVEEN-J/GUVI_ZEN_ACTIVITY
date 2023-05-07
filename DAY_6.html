@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAY_6</title>
+</head>
+<body>
+    <h1>Day 06 :OOPS TASK </h1>
+
+    <h2>https://github.com/rvsp/typescript-oops/blob/master/Practice/Movie.md<br>
+        https://github.com/rvsp/typescript-oops/blob/master/Practice/class-circle.md<br>
+        Write a “person” class to hold all the details.<br>
+        write a class to calculate the uber price.<br>
+        </h2><br>
+
+
+
+
+        <script>
+                                               // 1 Class - Movie
+            class Movie{
+                constructor(title,studio,rating){
+                                this.title = title;
+                                this.studio = studio;
+                                this.rating = rating;
+                }
+                     
+                              
+            };
+
+           let title= "Casino Royale";
+            let studio = "Eon Productions";
+            let rating_code = "PG­13";
+            if (rating_code == "PG­13") {
+            var rating = "PG­13";
+                
+            } else {
+                //default
+                var rating = "PG­";
+                
+            }
+
+var newMovie= new Movie(title,studio ,rating )
+ console.log(newMovie);
+
+ 
+                             
+        
+        //2. class circle
+
+ var Circle =(function () {
+    function Circle(radius, color) {
+        this.radius = 1.0;
+        this.color = "Red";
+        if (typeof (radius) !== "undefined") {
+            this.radius = radius;
+        }
+        if (typeof (color) !== "undefined") {
+            this.color = color;
+        }
+    }
+    Circle.prototype.getRadius = function () {
+        return this.radius;
+    };
+    Circle.prototype.setRadius = function (radius) {
+        this.radius = radius;
+    };
+    Circle.prototype.getColor = function () {
+        return this.color;
+    };
+    Circle.prototype.setColor = function (color) {
+        this.color = color;
+    };
+    Circle.prototype.toString = function () {
+        return "Circle[radius= " + this.radius + ", Color: " + this.color+"]";
+    };
+    Circle.prototype.getArea = function () {
+        return (2 * (Math.PI) * this.radius);
+    };
+    Circle.prototype.getCircumference = function () {
+        return (2 * this.radius);
+    };
+    return Circle;
+}());
+var Circle1 = new Circle();
+console.log(Circle1.toString());
+
+var Circle2 = new Circle(7.5);
+console.log(Circle2.toString());
+
+var Circle3 = new Circle(1.7, 'skyBlue');
+console.log(Circle3.getRadius());
+
+Circle3.setRadius(3.3);
+console.log(Circle3.getRadius());
+console.log(Circle3.getColor());
+
+Circle3.setColor("red");
+console.log(Circle3.getColor());
+console.log(Circle3.toString());
+console.log(Circle3.getArea());
+console.log(Circle3.getCircumference());
+          
+
+
+
+
+
+
+
+
+                                            
+                                           //3. Write a “person” class to hold all the details.
+
+ class person{
+    constructor(name,age,num){
+        this.name=name;
+        this.age=age;
+        this.num=num;
+
+    }
+ }
+
+ var details = new person("saveen","26","8220123122")
+ console.log(details);
+                                             //4. write a class to calculate the uber price.
+
+ class uber{
+    constructor(name,location,num,amount){
+        this.name=name;
+        this.location=location;
+        this.num=num;
+        this.amount=amount;
+
+
+    }
+ }
+
+ const perkm=15;
+ let name= "saveen",street= "west street",number = "8220123122",count_person= 5,km= 5,amount=km*perkm*count_person;
+ 
+console.log(amount);
+
+ var uber_details = new uber(name,street,number,amount)
+ console.log(uber_details);
+
+
+
+        </script>
+    
+</body>
+</html>
