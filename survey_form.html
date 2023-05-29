@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/bootstrapStyle/bootstrap.min.css" rel="stylesheet"  crossorigin="anonymous">
+    <!-- Font Awesome Icon Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.checked {
+  color: orange;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  left: -10000px;
+  overflow: hidden;
+}
+
+.control, fieldset {
+  margin: 6px 0;
+}
+
+label {
+  display: inline-block;
+  width: 120px;
+  vertical-align: top;
+}
+
+.star {
+  color: red;
+}
+</style>
+    <title>FORM</title>
+</head>
+<body>
+
+    <form>
+         <div class="container mt-4" > 
+            <div class="row">
+              
+                 <div class="form-cont">
+                   
+                   <label for="Fnamid" >Name<span class="star">*</span></label><br>
+                    <input type="text" name="FirstName" class="Fname" id="Fnameid" required >            
+                    <input type="text" name="LastName" class="Lname" id="Lastnameid" required ><br>
+                    <small >First</small>
+                    <small style="padding-left: 170px;">Last</small>     
+                </div><br>
+                <div class="col-sm-6 ">
+                    <label for="emailid">Email<span class="star">*</span></label><br>
+                    <input type="mail" name="mail" class="mail" id="mailid" required >       
+                    
+                </div> <br><br><br>
+                <div>
+                  
+                    <h5>Your Experience<span class="star">*</span></h5>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                </div>  <br><br>
+                <small>Overall.how would you rate you experience with us?</small><br>
+      
+                     </div>
+                 </div> 
+                         
+       <div class="container mt-1">
+        <h4>How satisfied are you with<span class="star">*</span></h4> 
+       <table style="width: 100%;">
+        <thead>
+            <tr style="text-align: center;">
+                <td></td>
+                <td>Very Unsatisfied</td>
+                <td>Unsatisfied</td>
+                <td>Neutral</td>
+                <td>Satisfied</td>
+                <td>Very Satisfied</td>
+                
+
+            </tr>
+
+        </thead>
+        <tbody>
+            <tr style="background-color: rgb(224, 221, 227);">
+                <td style="width: 12%; padding-left: 10px;">Purchase</td>
+                <td style="text-align: center;"><input type="radio" ></td>
+                <td style="text-align: center;"><input type="radio" ></td>
+                <td style="text-align: center;"><input type="radio" ></td>
+                <td style="text-align: center;"><input type="radio" ></td>
+                <td style="text-align: center;"><input type="radio" ></td>
+                         
+            </tr>
+            <tr>
+                <td style="padding-left: 10px;">Service</td>
+                <td style="text-align: center;"><input type="radio" ></td>
+                <td style="text-align: center;"><input type="radio" ></td>
+                <td style="text-align: center;"><input type="radio" ></td>
+                <td style="text-align: center;"><input type="radio" ></td>
+                <td style="text-align: center;"><input type="radio" ></td>
+                         
+            </tr>
+           
+            <tr style="background-color: rgb(224, 221, 227);">
+                <td style="padding-left: 10px;">Company Overall</td>
+                <td style="text-align: center;"><input type="radio" ></td>
+                <td style="text-align: center;"><input type="radio" ></td>
+                <td style="text-align: center;"><input type="radio" ></td>
+                <td style="text-align: center;"><input type="radio" ></td>
+                <td style="text-align: center;"><input type="radio" ></td>
+                         
+            </tr>
+
+        </tbody>
+
+
+    </table>
+   
+</div><br>
+
+
+ <div class="container mt-1">
+    <h4>How likely are you to<span class="star">*</span></h4> 
+   <table style="width: 100%;" >
+    <thead>
+        <tr style="text-align: center;">
+            <td></td>
+            <td>Very Unlikely</td>
+            <td>Unlikely</td>
+            <td>Neutral</td>
+            <td>Likely</td>
+            <td>Very likely</td>
+            
+
+        </tr>
+
+    </thead>
+    <tbody>
+        <tr style="background-color: rgb(224, 221, 227);">
+            <td style="width: 12%; padding-left: 10px;">Buy from us again</td>
+            <td style="text-align: center;"><input type="radio" ></td>
+            <td style="text-align: center;"><input type="radio" ></td>
+            <td style="text-align: center;"><input type="radio" ></td>
+            <td style="text-align: center;"><input type="radio" ></td>
+            <td style="text-align: center;"><input type="radio" ></td>
+                     
+        </tr>
+        <tr>
+            <td style="padding-left: 10px;"> Recommend our product to others</td>
+            <td style="text-align: center;"><input type="radio" ></td>
+            <td style="text-align: center;"><input type="radio" ></td>
+            <td style="text-align: center;"><input type="radio" ></td>
+            <td style="text-align: center;"><input type="radio" ></td>
+            <td style="text-align: center;"><input type="radio" ></td>
+                     
+        </tr>
+       
+        <tr style="background-color: rgb(224, 221, 227);">
+            <td style="padding-left: 10px;">Recommend our company to others</td>
+            <td style="text-align: center;"><input type="radio" ></td>
+            <td style="text-align: center;"><input type="radio" ></td>
+            <td style="text-align: center;"><input type="radio" ></td>
+            <td style="text-align: center;"><input type="radio" ></td>
+            <td style="text-align: center;"><input type="radio" ></td>
+                     
+        </tr>
+
+    </tbody>
+
+
+</table><br>
+
+</div> 
+        <div class="container">
+            <h6>Additional comments or suggestions</h6> 
+            <textarea style="width: 100%; height: 100px;"></textarea><br><br>
+            <button type="submit" class="btn" style="background-color: rgb(224, 221, 227);">Submit</button>
+        </div>
+
+    
+    </form>
+
+    <!-- <form>
+        <div class="row">
+          <div class="col">
+            <label for="Fnamid">Name</label><br>
+            <input type="text" name="FirstName" class="form-contro" id="Fnameid" > 
+          
+          </div>
+          <div class="col">
+            <input type="text" name="LastName" class="Lname" id="Lastnameid" >
+       
+          </div>
+        </div>
+      </form> -->
+
+    
+</body>
+</html>

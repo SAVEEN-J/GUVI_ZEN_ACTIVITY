@@ -1,0 +1,136 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+* {
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  flex-direction: column;
+  background-color: #e1e9eb;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  display: flex;
+ 
+}
+
+.wrapper {
+  display: grid;
+  grid-template-areas: "one btn btn two";
+  width: 80%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.paginationBtn,
+#paginationNumber {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #0ce2e2;
+
+}
+.paginationBtn.one {
+  grid-area: one;
+}
+.paginationBtn.two {
+  grid-area: two;
+}
+#paginationNumber {
+  grid-area: btn;
+}
+a {
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  line-height: 50px;
+  width: 100%;
+  
+ 
+  padding: 0 10px;
+  cursor: pointer;
+  user-select: none;
+  color: #010c11;
+}
+a.active {
+  background-color: #273c75;
+}
+a:hover:not(.active) {
+  background-color: #db5bbf;
+}
+a:active {
+  background-color: #27ae60 !important;
+}
+.container {
+  display: flex;
+  width: 80%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  overflow: hidden;
+ 
+}
+table {
+  width: 100%;
+  border: 1px solid rgba(128, 128, 128, 0.363);
+}
+
+tr {
+  transition: 0.3s;
+  /* padding: 5px; */
+  text-align: center;
+  color: #fff;
+  animation: fade 0.5s linear;
+}
+
+th{text-align:center;}
+td {
+  padding: 5px;
+}
+tr:first-child {
+  background-color: rgba(17, 11, 125, 0.308);
+}
+tr:nth-child(2n) {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+.item:hover {
+  background-color: #ffffffc0;
+  color: #000;
+}
+@media (max-width: 768px) {
+  .wrapper {
+    grid-template-areas:
+      "one two"
+      "btn btn";
+  }
+}
+@media (max-width: 650px) {
+  body {
+    height: auto;
+    padding: 20px 5px;
+  }
+  th {
+    display: none;
+  }
+  td {
+    display: block;
+    font-size: 12px;
+    padding: 10px;
+  }
+  td:nth-child(1):before {
+    content: "ID :-   ";
+  }
+  td:nth-child(2):before {
+    content: "Name :-   ";
+  }
+  td:nth-child(3):before {
+    content: "Email :-   ";
+  }
+}
+@media (max-width: 450px) {
+  .wrapper {
+    width: 100%;
+  }
+}

@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Wallpoet&display=swap");
+
+body {
+  background-color: #fff;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  user-select: none;
+  transition: 0.3s;
+}
+
+.container {
+  width: 400px;
+  height: 500px;
+  border-radius: 25px;
+  box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.255);
+}
+.value {
+  position: relative;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 20%;
+
+  padding: 10px;
+  overflow: hidden;
+  border-radius: 10px;
+  font-size: 25px;
+}
+body.dark .container .value {
+  box-shadow: inset 15px 15px 15px rgba(0, 0, 0, 0.5),
+    inset -15px -15px 10px rgba(255, 255, 255, 0.1);
+}
+.problem {
+  position: absolute;
+  width: 93%;
+  height: 45%;
+}
+.solution {
+  position: absolute;
+  bottom: 10px;
+  width: 93%;
+  height: 35%;
+  text-align: right;
+}
+.button {
+  position: relative;
+  margin-top: 20px;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 60%;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  place-items: center;
+}
+span {
+  display: grid;
+  place-content: center;
+  box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.1),
+    -15px -15px 20px rgba(255, 255, 255, 0.1);
+  width: 90%;
+  height: 90%;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #5b5959, 0 0px 60px #ffffff;
+  font-size: 20px;
+}
+body.dark .container span {
+  /* background: transparent; */
+  border: 3px solid #2d3436;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1), -5px -5px 20px rgba(0, 0, 0, 0.1);
+}
+body.dark .container span:active {
+  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1),
+    inset -5px -5px 10px rgba(255, 255, 255, 0.1);
+  color: cyan;
+}
+body .container span:active {
+  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1),
+    inset -5px -5px 10px rgba(0, 0, 0, 0.1);
+  color: cyan;
+}
+.clear {
+  background-color: #f9ca24 !important;
+  color: black;
+}
+.plus {
+  grid-row: span 2;
+  background-color: #22a6b3 !important;
+  color: black;
+}
+.symbol {
+  font-size: 20px;
+}
+.equal {
+  background-color: #2ecc71 !important;
+  color: black;
+  font-size: 30px;
+}
+
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 400px) {
+  .container {
+    width: 375px;
+  }
+  .clear {
+    font-size: 18px;
+  }
+}
+@media (max-width: 375px) {
+  .container {
+    width: 360px;
+  }
+}
