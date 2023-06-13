@@ -48,3 +48,6 @@ setTimeout(() => {
     }, 1000);
   }, 1000);
 }, 1000);
+
+// let input="hi guvi"
+// console.log(input.split("").reverse().join(""));
