@@ -139,7 +139,15 @@ if (ind===e.indexOf(val)) {
  
         
 })(RemoveDuplicates);
-
+///////////////////////////////h Rotate an array by k times
+function rotateArray(arr, k) {
+       k = k % arr.length;
+        return arr.slice(k).concat(arr.slice(0, k));
+}
+const array = [1, 2, 3, 4, 5];
+const rotations = 3;
+const rotatedArray = rotateArray(array, rotations);
+console.log(rotatedArray); // Output: [4, 5, 1, 2, 3]
  
 ////////////////////////////////////////////////////////////////////////////////2.ARROW FUNCTION////////////////////////////////////////////////////
 /////////////////////////////////////////////////// a.Print odd numbers in an array (ARROW)
